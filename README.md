@@ -1,7 +1,7 @@
 # BlockManager - Блокировщик программного обеспечения 🛡️
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/Version-0.1-blue" alt="Version">
   <img src="https://img.shields.io/badge/Platform-Windows-success" alt="Platform">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
   <img src="https://img.shields.io/badge/Status-PreRelease-orange" alt="Status">
