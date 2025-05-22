@@ -12,7 +12,7 @@ import win32serviceutil
 import win32service
 import sys, logging
 import logging.handlers
-from .TkinterDnD import DND_FILES, DnDWrapper, _require
+from TkinterDnD import DND_FILES, DnDWrapper, _require
 import subprocess
 from datetime import datetime
 
@@ -191,11 +191,14 @@ class BlockManagerGUI(ctk.CTk, DnDWrapper):
             messagebox.showerror("Ошибка", "Требуются права администратора!")
             return False
         
-        if isinstance(self.server_entry, ctk.CTkEntry):
-            self.server_host = self.server_entry.get()
-        else:
+        try:
+            if isinstance(self.server_entry, ctk.CTkEntry):
+                self.server_host = self.server_entry.get()
+            else:
+                self.server_host = None
+        except:
             self.server_host = None
-
+            
         config = {
             'host': self.server_host,
             'config': c,
@@ -442,7 +445,8 @@ class BlockManagerGUI(ctk.CTk, DnDWrapper):
             'config': False,
             'local': False,
             'autostart': False,
-            'server': False
+            'server': False,
+            'updater': False
         }
         messages = []
 
